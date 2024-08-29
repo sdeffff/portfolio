@@ -11,7 +11,7 @@ const Preloader = () => {
             setTimeout(() => {
                 preloader.current.style.display = "none";
 
-                console.clear();
+                // console.clear();
             }, 3620);
         };
 
@@ -26,8 +26,9 @@ const Preloader = () => {
         <section 
         ref={preloader} 
         id="preloader" 
-        className= "bg-[#060606] absolute top-0 left-0 w-[100vw] h-[100vh] opacity-100 z-50 ease-in-out duration-[550ms] delay-[2s]">
-            <h1 className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white text-3xl">CH. 01:MP Portfolio</h1>
+        className= "bg-[#060606] fixed top-0 left-0 w-[100vw] h-[100vh] opacity-100 z-[100] ease-in-out duration-[550ms] delay-[2s]">
+            <h1 
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white text-3xl">CH. 01:MP Portfolio</h1>
         </section>
     )
 }

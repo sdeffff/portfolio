@@ -16,3 +16,11 @@
 
     mix-blend-mode: difference;
 }
+
+.cursor-arrow {
+    opacity: 0;
+
+    transition-duration: 300ms;
+
+    pointer-events: none;
+}

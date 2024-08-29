@@ -14,26 +14,34 @@ function App() {
   //using useEffect because if we won't use useEffect, it will send us errors
   //because our divs will be called before they will be created in the DOM
   useEffect(() => {
-    const cursorInner = document.querySelector(".cursor-inner");
+    const cursorInner = document.querySelector(".cursor-inner"),
+          cursorArrow = document.querySelector(".cursor-arrow");
 
-    const handleCursor = (e, interacting) => {
+    const handleCursor = (e, interacting, proj) => {
       const x = e.clientX,
             y = e.clientY;
 
-      const animation = {
-        transform: `translate(${x}px, ${y}px) scale(${interacting ? 4 : 1})`,
+      const expand = {
+        transform: `translate(${x}px, ${y}px) scale(${interacting ? 6 : 1})`,
       }
 
-      cursorInner.animate(animation, {duration: 450});
+      const reveal = {opacity: `${proj ? 100 : 0}`,}
 
-      cursorInner.style.transform = `translate(${x}px, ${y}px) scale(${interacting ? 4 : 1})`;
+      cursorInner.animate(expand, {duration: 450});
+      cursorArrow.animate(reveal, {duration: 100});
+
+      cursorInner.style.transform = `translate(${x}px, ${y}px) scale(${interacting ? 6 : 1})`;
+      cursorArrow.style.opacity = `${proj ? 100 : 0}`;
     }
 
     window.onmousemove = e => {
       const interactable = e.target.closest(".int"),
             interacting = interactable !== null;
 
-      handleCursor(e, interacting);
+      const project = e.target.closest(".proj"),
+            proj = project !== null;
+
+      handleCursor(e, interacting, proj);
     }
 
     return () => {
@@ -51,7 +59,9 @@ function App() {
         <Route path="/projects" element={<Projects />}></Route>
       </Routes>
 
-      <div className="cursor-inner"></div>
+      <div className="cursor-inner">
+        <img src="/arrow.png" alt="" className="cursor-arrow" />
+      </div>
     </>
   )
 }

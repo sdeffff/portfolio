@@ -12,9 +12,11 @@
   padding: 0;
 }
 
-body {
-  overflow: hidden;
+::-webkit-scrollbar {
+  display: none;
+}
 
+body {
   background-color: #101010;
 }
 

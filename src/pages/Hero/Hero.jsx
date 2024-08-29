@@ -9,7 +9,7 @@ const Hero = () => {
     const modelRef = useRef(null);
     const rendererRef = useRef(null);
 
-    let audio = new Audio("../../public/audio/sound.mp3");
+    let audio = new Audio("/audio/sound.mp3");
 
     const handleClick = () => {
         audio.volume = 0.3;
@@ -100,8 +100,20 @@ const Hero = () => {
 
     return (
         <>
-        <article className="main-txt absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center flex flex-col gap-6 z-[2] font-extralight">
-            <h2 className="text-[#dcdde1] text-4xl">Hey, my name is <span><a href="https://github.com/sdeffff" className="name int">Maksym Pavlii</a></span>, and I am <span>Front-End Developer</span></h2>
+        <article 
+        className="main-txt absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center flex flex-col gap-6 z-[2] font-extralight">
+            <h2 
+            className="text-[#dcdde1] text-4xl">Hey, my name is 
+                <span>
+                    <a href="https://github.com/sdeffff" className="name int">
+                        Maksym Pavlii
+                    </a>
+                </span>, and I am 
+            
+                <span>
+                    Front-End Developer
+                </span>
+            </h2>
 
             <div className="flex items-center justify-center gap-5">
 
