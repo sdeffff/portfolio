@@ -6,18 +6,26 @@ import "./app.css";
 
 import Preloader from "./pages/Preloader";
 //Pages:
-import Hero from "./pages/Hero/Hero";
-import Projects from "./pages/Projects/Projects";
+const Hero = lazy(() => import("./pages/Hero/Hero"));
+const Projects = lazy(() => import("./pages/Projects/Projects"));
 
 function App() {
-
   //using useEffect because if we won't use useEffect, it will send us errors
   //because our divs will be called before they will be created in the DOM
+  const firstToUpper = (str) => {
+    str = str.split('');
+
+    str.splice(0, 1, str[0].toUpperCase());
+
+    return str.join('');
+  }
+
   useEffect(() => {
     const cursorInner = document.querySelector(".cursor-inner"),
-          cursorArrow = document.querySelector(".cursor-arrow");
+          cursorArrow = document.querySelector(".cursor-arrow"),
+          projectText = document.querySelector(".project-name");
 
-    const handleCursor = (e, interacting, proj) => {
+    const handleCursor = (e, interacting, proj, project) => {
       const x = e.clientX,
             y = e.clientY;
 
@@ -32,6 +40,21 @@ function App() {
 
       cursorInner.style.transform = `translate(${x}px, ${y}px) scale(${interacting ? 6 : 1})`;
       cursorArrow.style.opacity = `${proj ? 100 : 0}`;
+
+      //do till the end this feature
+      if(project !== null) {
+        let name = project.children[0].src.split('/');
+        name = name[name.length - 1].split('.')[0];
+        name = name.split('-');
+
+        for(let i = 0; i < name.length; i++) {
+          name[i] = firstToUpper(name[i]);
+        }
+
+        name = name.join(" ");
+
+        projectText.innerHTML = name;
+      }
     }
 
     window.onmousemove = e => {
@@ -41,7 +64,7 @@ function App() {
       const project = e.target.closest(".proj"),
             proj = project !== null;
 
-      handleCursor(e, interacting, proj);
+      handleCursor(e, interacting, proj, project);
     }
 
     return () => {
@@ -55,12 +78,14 @@ function App() {
     <div id="noise"></div>
 
       <Routes>
-        <Route path="/" element={<Hero />}></Route>
-        <Route path="/projects" element={<Projects />}></Route>
+        <Route path="/" element={<Suspense><Hero /></Suspense>}></Route>
+        <Route path="/projects" element={<Suspense><Projects /></Suspense>}></Route>
       </Routes>
 
       <div className="cursor-inner">
         <img src="/arrow.png" alt="" className="cursor-arrow" />
+
+        <p className="project-name"></p>
       </div>
     </>
   )

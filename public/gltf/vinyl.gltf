@@ -3,6 +3,12 @@
 		"generator":"Khronos glTF Blender I/O v4.2.60",
 		"version":"2.0"
 	},
+	"extensionsUsed":[
+		"KHR_draco_mesh_compression"
+	],
+	"extensionsRequired":[
+		"KHR_draco_mesh_compression"
+	],
 	"scene":0,
 	"scenes":[
 		{
@@ -60,7 +66,7 @@
 			],
 			"translation":[
 				0,
-				0.00014000000373926014,
+				0.0001398296153638512,
 				-0.00035700001171790063
 			]
 		}
@@ -95,8 +101,19 @@
 						"NORMAL":1,
 						"TEXCOORD_0":2
 					},
+					"extensions":{
+						"KHR_draco_mesh_compression":{
+							"bufferView":0,
+							"attributes":{
+								"POSITION":0,
+								"NORMAL":1,
+								"TEXCOORD_0":2
+							}
+						}
+					},
 					"indices":3,
-					"material":0
+					"material":0,
+					"mode":4
 				}
 			]
 		}
@@ -117,81 +134,58 @@
 	],
 	"images":[
 		{
-			"mimeType":"image/png",
+			"mimeType":"image/jpeg",
 			"name":"Image_2",
-			"uri":"Image_2.png"
+			"uri":"Image_2.jpg"
 		},
 		{
-			"mimeType":"image/png",
+			"mimeType":"image/jpeg",
 			"name":"Image_1",
-			"uri":"Image_1.png"
+			"uri":"Image_1.jpg"
 		},
 		{
-			"mimeType":"image/png",
+			"mimeType":"image/jpeg",
 			"name":"Image_0",
-			"uri":"Image_0.png"
+			"uri":"Image_0.jpg"
 		}
 	],
 	"accessors":[
 		{
-			"bufferView":0,
 			"componentType":5126,
-			"count":774,
+			"count":390,
 			"max":[
-				0.14999999105930328,
-				0.14999999105930328,
+				0.15044981241226196,
+				0.15035931766033173,
 				0.0010499998461455107
 			],
 			"min":[
+				-0.150041863322258,
 				-0.14999999105930328,
-				-0.14999999105930328,
-				-2.9103830456733704e-10
+				-3.583298935350143e-10
 			],
 			"type":"VEC3"
 		},
 		{
-			"bufferView":1,
 			"componentType":5126,
-			"count":774,
+			"count":390,
 			"type":"VEC3"
 		},
 		{
-			"bufferView":2,
 			"componentType":5126,
-			"count":774,
+			"count":390,
 			"type":"VEC2"
 		},
 		{
-			"bufferView":3,
 			"componentType":5123,
-			"count":2304,
+			"count":1152,
 			"type":"SCALAR"
 		}
 	],
 	"bufferViews":[
 		{
 			"buffer":0,
-			"byteLength":9288,
-			"byteOffset":0,
-			"target":34962
-		},
-		{
-			"buffer":0,
-			"byteLength":9288,
-			"byteOffset":9288,
-			"target":34962
-		},
-		{
-			"buffer":0,
-			"byteLength":6192,
-			"byteOffset":18576,
-			"target":34962
-		},
-		{
-			"buffer":0,
-			"byteLength":4608,
-			"byteOffset":24768,
-			"target":34963
+			"byteLength":3174,
+			"byteOffset":0
 		}
 	],
 	"samplers":[
@@ -202,7 +196,7 @@
 	],
 	"buffers":[
 		{
-			"byteLength":29376,
+			"byteLength":3176,
 			"uri":"vinyl.bin"
 		}
 	]

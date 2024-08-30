@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import * as THREE from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
+import { DRACOLoader } from "three/examples/jsm/Addons.js";
 
 import { Link } from "react-router-dom";
 
@@ -33,10 +34,15 @@ const Hero = () => {
         directionalLight.position.set(-0.11, 1.6, 0.03);
         scene.add(directionalLight);
 
-        const ambientLight = new THREE.AmbientLight(0xffffff, 0.55);
+        const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
         scene.add(ambientLight);
 
         const loader = new GLTFLoader();
+        const draco = new DRACOLoader();
+        draco.setDecoderConfig({ type: 'js' });
+        draco.setDecoderPath('https://www.gstatic.com/draco/v1/decoders/');
+        loader.setDRACOLoader(draco);
+
         loader.load(
             '/gltf/vinyl.gltf',
             (gltf) => {
