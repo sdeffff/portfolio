@@ -1,25 +1,3 @@
-li {
-    overflow: hidden;
-}
-
-img {
-    width: 720px;
-    border-radius: 2px;
-
-    opacity: 0.6;
-
-    overflow: hidden;
-
-    transition: .35s ease;
-
-    cursor: pointer;
-}
-
-img:hover {
-    opacity: 1;
-    scale: 1.03;
-}
-
 .projects-circle {
     position: absolute;
     bottom: 15%;

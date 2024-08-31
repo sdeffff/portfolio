@@ -42,6 +42,7 @@ function App() {
       cursorArrow.style.opacity = `${proj ? 100 : 0}`;
 
       //do till the end this feature
+      projectText.style.opacity = 0;
       if(project !== null) {
         let name = project.children[0].src.split('/');
         name = name[name.length - 1].split('.')[0];
@@ -54,6 +55,7 @@ function App() {
         name = name.join(" ");
 
         projectText.innerHTML = name;
+        projectText.style.opacity = 1;
       }
     }
 

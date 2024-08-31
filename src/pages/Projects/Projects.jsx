@@ -1,8 +1,12 @@
 import { useEffect, useRef } from "react";
+
+import ProjectList from "./projects-components/ProjectList";
+
 import "./projects.css";
 
 const Projects = () => {
-    const textRef = useRef(null);
+    const textRef = useRef(null),
+          circleRef = useRef(null);
 
     useEffect(() => {
         const scrollText = document.querySelector(".scroll-txt");
@@ -18,16 +22,13 @@ const Projects = () => {
         }
     }, []);
 
-
-
     useEffect(() => {
         const textTimeout = setTimeout(() => {
             textRef.current.className = textRef.current.className.replace("translate-y-24", "translate-y-2");
+            circleRef.current.className = circleRef.current.className.replace("opacity-0", "opacity-100");
         }, 2500);
 
-        return () => {
-            clearTimeout(textTimeout);
-        }
+        return () => { clearTimeout(textTimeout); }
     }, []);
 
     const handleScroll = () => {
@@ -43,28 +44,13 @@ const Projects = () => {
                     className="projects-txt text-white text-[4.85rem] font-extralight uppercase tracking-widest translate-y-24 ease-in-out duration-700">My Projects</h1>
                 </div>
 
-                <article>
+                <article ref={circleRef} className="opacity-0 duration-[600ms]">
                     <p className="scroll-txt"></p>
                     <div onClick={handleScroll} className="int projects-circle"></div>
                 </article>
             </div>
-            <ul className="grid grid-cols-2 gap-y-10 place-items-center">
-                <li className="int proj">
-                    <img src="/square-up.png" alt="" />
-                </li>
-
-                <li className="int proj">
-                    <img src="/square-up.png" alt="" />
-                </li>
-
-                <li className="int proj">
-                    <img src="/square-up.png" alt="" />
-                </li>
-
-                <li className="int proj">
-                    <img src="/square-up.png" alt="" />
-                </li>
-            </ul>
+            
+            <ProjectList />
         </section>
     )
 }

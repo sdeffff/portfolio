@@ -24,3 +24,20 @@
 
     pointer-events: none;
 }
+
+.project-name {
+    color: white;
+
+    position: absolute;
+    top: -2px;
+    
+    width: 30px;
+
+    margin-left: 10px;
+
+    opacity: 0;
+
+    font-size: 0.25rem;
+
+    transition: .35s ease;
+}
