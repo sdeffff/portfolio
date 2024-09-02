@@ -1,7 +1,7 @@
 import ProjectItem from "./ProjectItem";
 
-import squareUp from "/square-up.png";
-import miniProj from "/mini-projects.jpg";
+import squareUp from "/imgs/square-up.webp";
+import miniProj from "/imgs/mini-projects.webp";
 
 const ProjectList = () => {
     return (

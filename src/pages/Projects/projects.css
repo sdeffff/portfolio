@@ -1,3 +1,7 @@
+.project-preloader h1 {
+    font-family: 'VCR OSD Mono';
+}
+
 .projects-circle {
     position: absolute;
     bottom: 15%;
