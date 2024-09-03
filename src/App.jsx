@@ -12,7 +12,6 @@ const Projects = lazy(() => import("./pages/Projects/Projects"));
 
 function App() {
   const cursorRef = useRef(null),
-        cursorArrow = useRef(null),
         projectName = useRef(null);
 
   //using useEffect because if we won't use useEffect, it will send us errors
@@ -25,20 +24,21 @@ function App() {
   }
 
   useEffect(() => {
-    const handleCursor = (e, interacting, proj, project) => {
+    const handleCursor = (e, interacting, project) => {
       const x = e.clientX,
             y = e.clientY;
 
       const expand = { transform: `translate(${x}px, ${y}px) scale(${interacting ? 6 : 1})`, }
 
-      const reveal = { opacity: `${proj ? 100 : 0}` }
-
+      //animating the tracker
       cursorRef.current.animate(expand, {duration: 450});
 
+      //and adding styles to it
       cursorRef.current.style.transform = `translate(${x}px, ${y}px) scale(${interacting ? 6 : 1})`;
-
-      projectName.current.style.opacity = 0;
+      
+      //logic to reveal project name near cursor tracker
       if(project !== null) {
+        //getting src of the image and removing all symbols
         let name = project.children[0].src.split('/').pop().split('.')[0].split('-');
 
         for(let i = 0; i < name.length; i++) {
@@ -47,6 +47,7 @@ function App() {
 
         name = name.join(" ");
 
+        //passing the value to our <p> tag
         projectName.current.innerHTML = name;
         projectName.current.style.opacity = 1;
       }
@@ -56,10 +57,11 @@ function App() {
       const interactable = e.target.closest(".int"),
             interacting = interactable !== null;
 
-      const project = e.target.closest(".proj"),
-            proj = project !== null;
+      const project = e.target.closest(".proj");
 
-      handleCursor(e, interacting, proj, project);
+      //Interacting - expanding of tracker
+      //project - element that has proj in className
+      handleCursor(e, interacting, project);
     }
 
     window.addEventListener("mousemove", onMouseMove);
