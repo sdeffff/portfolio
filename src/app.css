@@ -1,3 +1,18 @@
+.preloader h1,
+.technologies-head,
+.techlogies-list li {
+    font-family: 'VCR OSD Mono';
+}
+
+.techlogies-list li {
+    display: flex;
+    align-items: center;
+}
+
+.techlogies-list li img {
+    width: 1.5rem;
+}
+
 .cursor-inner {
     position: fixed;
     left: 0;

@@ -2,13 +2,11 @@ import { lazy, Suspense, useEffect, useRef } from "react";
 
 import { Route, Routes } from "react-router-dom";
 
-import Preloader from "./pages/Preloader";
-
 import "./app.css";
-import arrowIcon from "./assets/arrow.png";
 //Pages:
 const Hero = lazy(() => import("./pages/Hero/Hero"));
 const Projects = lazy(() => import("./pages/Projects/Projects"));
+const SquareUp = lazy(() => import("./pages/Projects/Project's Pages/SquareUp"));
 
 function App() {
   const cursorRef = useRef(null),
@@ -35,11 +33,12 @@ function App() {
 
       //and adding styles to it
       cursorRef.current.style.transform = `translate(${x}px, ${y}px) scale(${interacting ? 6 : 1})`;
-      
+
+      projectName.current.style.opacity = 0;
       //logic to reveal project name near cursor tracker
       if(project !== null) {
         //getting src of the image and removing all symbols
-        let name = project.children[0].src.split('/').pop().split('.')[0].split('-');
+        let name = project.children[0].children[0].src.split('/').pop().split('.')[0].split('-');
 
         for(let i = 0; i < name.length; i++) {
           name[i] = firstToUpper(name[i]);
@@ -73,13 +72,13 @@ function App() {
 
   return (
     <>
-    <Preloader />
     <div id="noise"></div>
 
     <Suspense>
       <Routes>
         <Route path="/portfolio/" element={<Hero />}></Route>
         <Route path="/portfolio/projects" element={<Projects />}></Route>
+        <Route path="/portfolio/projects/square-up" element={<SquareUp />}></Route>
       </Routes>
     </Suspense>
 
@@ -92,3 +91,26 @@ function App() {
 }
 
 export default App;
+
+
+//1. Creating new branch
+//git checkout -b branch_name
+//git repo push
+
+//2. Merging
+//git checkout main
+//git fetch lab/o
+
+//git pull lab/o main
+
+//git checkout new_branch
+//git pull lab/o new_branch
+
+//git checkout main
+//git merge new_branch
+
+//3. Pushing merged changes to repo: git push lab/o
+
+//4. Deleteing branches:
+//local: git branch -d new_branch
+//git push lab/o --delete new_branch

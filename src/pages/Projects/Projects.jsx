@@ -36,7 +36,7 @@ const Projects = () => {
     useEffect(() => {
         const removePreloader = setTimeout(() => {
             preloaderRef.current.style.opacity = 0;
-        }, 1900);
+        }, 1800);
         
         return () => { clearTimeout(removePreloader) };
     }, []);
@@ -47,7 +47,7 @@ const Projects = () => {
 
     return (
         <section>
-            <div className="project-preloader bg-[#060606] fixed top-0 left-0 w-full h-full z-[90] opacity-100 duration-500 block" ref={preloaderRef}>
+            <div className="preloader bg-[#060606] fixed top-0 left-0 w-full h-full z-[90] opacity-100 duration-500 block" ref={preloaderRef}>
                 <h1 className="text-white absolute right-10 top-4 text-2xl">CH 02: Projects</h1>
             </div>
 
