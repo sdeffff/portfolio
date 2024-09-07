@@ -32,7 +32,7 @@ const Hero = () => {
                 className="text-[#dcdde1] text-4xl">
                     Hey, my name is&nbsp;
                     <span>
-                        <a href="https://github.com/sdeffff" className="name int">
+                        <a href="https://github.com/sdeffff" target="_blank" className="name int">
                             Maksym Pavlii
                         </a>
                     </span>, and I am&nbsp;

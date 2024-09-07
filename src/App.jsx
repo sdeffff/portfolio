@@ -5,7 +5,7 @@ import { Route, Routes } from "react-router-dom";
 import "./app.css";
 //Pages:
 const Hero = lazy(() => import("./pages/Hero/Hero"));
-const Projects = lazy(() => import("./pages/Projects/Projects"));
+const ProjectsPage = lazy(() => import("./pages/Projects/ProjectsPage"));
 const SquareUp = lazy(() => import("./pages/Projects/Project's Pages/SquareUp"));
 
 function App() {
@@ -74,10 +74,10 @@ function App() {
     <>
     <div id="noise"></div>
 
-    <Suspense>
+    <Suspense fallback="loading...">
       <Routes>
         <Route path="/portfolio/" element={<Hero />}></Route>
-        <Route path="/portfolio/projects" element={<Projects />}></Route>
+        <Route path="/portfolio/projects" element={<ProjectsPage />}></Route>
         <Route path="/portfolio/projects/square-up" element={<SquareUp />}></Route>
       </Routes>
     </Suspense>

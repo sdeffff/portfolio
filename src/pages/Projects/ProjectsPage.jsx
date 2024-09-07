@@ -3,7 +3,6 @@ import { useEffect, useRef } from "react";
 import ProjectList from "./projects-components/ProjectList";
 
 import "./projects.css";
-import { remove } from "three/examples/jsm/libs/tween.module.js";
 
 const Projects = () => {
     const textRef = useRef(null),

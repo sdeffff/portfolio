@@ -1,16 +1,7 @@
 .preloader h1,
 .technologies-head,
-.techlogies-list li {
+.techlogies-list li p {
     font-family: 'VCR OSD Mono';
-}
-
-.techlogies-list li {
-    display: flex;
-    align-items: center;
-}
-
-.techlogies-list li img {
-    width: 1.5rem;
 }
 
 .cursor-inner {
@@ -30,14 +21,6 @@
     transform: translate(-50%, -50%);
 
     mix-blend-mode: difference;
-}
-
-.cursor-arrow {
-    opacity: 0;
-
-    transition-duration: 300ms;
-
-    pointer-events: none;
 }
 
 .project-name {
