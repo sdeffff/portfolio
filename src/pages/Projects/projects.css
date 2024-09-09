@@ -1,7 +1,3 @@
-.project-preloader h1 {
-    font-family: 'VCR OSD Mono';
-}
-
 .projects-circle {
     position: absolute;
     bottom: 15%;
@@ -49,4 +45,76 @@
     100% {
         transform: translate(-51%, 1%) rotateZ(360deg);
     }
+}
+
+/* Page for projects: */
+.previews img {
+    pointer-events: none;
+}
+
+
+.features-reviews li {
+    width: 17rem;
+    overflow: hidden;
+
+    position: relative;
+}
+
+.features-reviews li::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 1.4rem;
+
+    transform: translate(-50%, -50%);
+
+    width: 100%;
+    height: 100%;
+
+    background-color: #060606a1;
+
+    opacity: 0;
+
+    transition: .3s ease;
+    pointer-events: none;
+}
+
+.features-reviews li[name="adaptiveness"]::after {
+    content: "Adaptiveness";
+}
+
+.features-reviews li[name="transition"]::after {
+    content: "Transition";
+}
+
+.features-reviews li[name="cursor"]::after {
+    content: "Cursor Effects";
+}
+
+.features-reviews li * {
+    transition: .3s ease;
+
+    border-radius: 2px;
+}
+
+.features-reviews li:hover * {
+    scale: 1.03;
+}
+
+.features-reviews li:hover::after {
+    opacity: 1;
+}
+
+.features-reviews li video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%) scale(2.5);
 }

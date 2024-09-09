@@ -1,3 +1,11 @@
+.preloader h1,
+.technologies-head,
+.project-head,
+.source-link,
+.project-features-head {
+    font-family: 'VCR OSD Mono';
+}
+
 .cursor-inner {
     position: fixed;
     left: 0;
@@ -15,14 +23,6 @@
     transform: translate(-50%, -50%);
 
     mix-blend-mode: difference;
-}
-
-.cursor-arrow {
-    opacity: 0;
-
-    transition-duration: 300ms;
-
-    pointer-events: none;
 }
 
 .project-name {
