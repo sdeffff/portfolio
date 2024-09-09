@@ -4,9 +4,9 @@ const ProjectLeft = ( props ) => {
     return (
         <aside className="mt-5 flex flex-col gap-10">
             <article className="flex flex-col items-start gap-3">
-                <h1 className="int text-5xl cursor-default">{props.projectName}</h1>
+                <h1 className="project-head int text-5xl cursor-default">{props.projectName}</h1>
 
-                <p className="text-md">{props.desc}</p>
+                <p className="text-base">{props.desc}</p>
             </article>
 
             <div className="flex flex-col items-start gap-1">
@@ -33,8 +33,8 @@ const ProjectLeft = ( props ) => {
             </div>
 
             <article className="flex flex-col items-start">
-                <a href={props.gitUrl} target="_blank">GitHub</a>
-                <a href={props.webUrl} target="_blank">Website</a>
+                <a href={props.gitUrl} target="_blank" className="int source-link text-lg">GitHub</a>
+                <a href={props.webUrl} target="_blank" className="int source-link text-lg">Website</a>
             </article>
         </aside>   
     )

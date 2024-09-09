@@ -1,6 +1,8 @@
 .preloader h1,
 .technologies-head,
-.techlogies-list li p {
+.project-head,
+.source-link,
+.project-features-head {
     font-family: 'VCR OSD Mono';
 }
 

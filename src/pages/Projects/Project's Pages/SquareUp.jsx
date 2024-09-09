@@ -1,9 +1,15 @@
 import Project from "./project-components/Project";
 
-//review video:
+//review part:
 import video from "/videos/square-up-review.mp4"
 import squareImg1 from "/imgs/square-up-preview-img-1.webp";
 import squareImg2 from "/imgs/square-up-preview-img-2.webp";
+import squareImg3 from "/imgs/square-up-preview-img-3.webp";
+
+//features part:
+import adaptImg from "/imgs/adaptiveness.webp";
+import cursorImg from "/imgs/cursor-animations.webp";
+import transitionReview from "/imgs/transition.mp4";
 
 //icons:
 import reactIcon from "/icons/react.png";
@@ -11,13 +17,20 @@ import typescriptIcon from "/icons/typescript.png";
 import tailwindIcon from "/icons/tailwind.png";
 import cssIcon from "/icons/css.png";
 
+import "../projects.css"
+
 const SquareUp = () => {
     return (
         <Project 
         project = "Square Up"
         video={video}
         previewImg1={squareImg1}
-        preciewImg2={squareImg2}
+        previewImg2={squareImg2}
+        previewImg3={squareImg3}
+        features={true}
+        adapt={adaptImg}
+        cursor={cursorImg}
+        transition={transitionReview}
         desc={`This is my first big pet-project, where I used React + TypeScript.
                 In my opinion this project really helped me to understand a lot of aspects
                 in web developing, and some basics knowledges about web app's optimization.

@@ -30,6 +30,11 @@ const Project = ( props ) => {
             video={props.video}
             img1={props.previewImg1}
             img2={props.previewImg2}
+            img3={props.previewImg3}
+            features={props.features}
+            adapt={props.adapt}
+            cursor={props.cursor}
+            transition={props.transition}
             />
 
             <ProjectRight 
