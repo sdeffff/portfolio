@@ -28,13 +28,18 @@ const Vinyl = () => {
             scene.add(ambientLight);
     
             const loader = new GLTFLoader();
+
+            //Setting sraco loader for 3d model compressing
             const draco = new DRACOLoader();
+
             draco.setDecoderConfig({ type: 'js' });
             draco.setDecoderPath('https://www.gstatic.com/draco/v1/decoders/');
+
             loader.setDRACOLoader(draco);
-    
+            
+            //Handling 3d model
             loader.load(
-                "/portfolio/gltf/vinyl.gltf",
+                "/portfolio/3d/untitled.glb",
                 (gltf) => {
                     const model = gltf.scene;
                     model.anisotropy = 16;
