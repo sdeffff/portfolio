@@ -23,7 +23,7 @@ const Project = ( props ) => {
             <div ref={projectPreloader} 
                 className="preloader bg-[#060606] fixed top-0 left-0 w-full h-full z-[90] opacity-100 duration-500 block"
             >
-                <h1 className="text-[#dddddd] absolute right-10 top-4 text-2xl">{props.project}</h1>
+                <h1 className="text-[#dddddd] absolute right-10 top-4 text-2xl pointer-events-none">{props.project}</h1>
             </div>
 
             <ProjectLeft 
