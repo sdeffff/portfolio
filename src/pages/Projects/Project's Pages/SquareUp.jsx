@@ -2,9 +2,9 @@ import Project from "./project-components/Project";
 
 //review part:
 import video from "/videos/square-up-review.mp4"
-import squareImg1 from "/imgs/square-up-preview-img-1.webp";
-import squareImg2 from "/imgs/square-up-preview-img-2.webp";
-import squareImg3 from "/imgs/square-up-preview-img-3.webp";
+import squareImg1 from "/imgs/square-up.webp";
+import squareImg2 from "/imgs/square-previews/square-up-preview-img-1.webp";
+import squareImg3 from "/imgs/square-previews/square-up-preview-img-2.webp";
 
 //features part:
 import adaptImg from "/imgs/adaptiveness.webp";

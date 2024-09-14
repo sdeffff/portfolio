@@ -2,10 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'VCR OSD Mono';
+  font-style: normal;
+  font-weight: normal;
+  src: local('VCR OSD Mono'), url('./font/vcr-osd-mono/VCR_OSD_MONO_1.001[1].woff') format('woff');
+}
+
 *,
 *::after,
 *::before {
-  font-family: 'Hepta Slab';
+  font-family: 'Hepta Slab', sans-serif;
 
   box-sizing: border-box;
   margin: 0;
