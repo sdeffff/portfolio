@@ -2,15 +2,18 @@ import { useEffect, useRef } from "react";
 
 import ProjectList from "./projects-components/ProjectList";
 
+import Preloader from "../Preloader";
+
 import "./projects.css";
 
 const Projects = () => {
     const textRef = useRef(null),
           circleRef = useRef(null),
-          scrollText = useRef(null),
-          preloaderRef = useRef(null);
+          scrollText = useRef(null);
 
     useEffect(() => {
+        window.scrollTo(0, 0);
+
         const str = "SCROLL DOWN SCROLL DOWN";
 
         for(let i = 0; i < str.length; i++) {
@@ -26,18 +29,9 @@ const Projects = () => {
         const textTimeout = setTimeout(() => {
             textRef.current.className = textRef.current.className.replace("translate-y-24", "translate-y-2");
             circleRef.current.className = circleRef.current.className.replace("opacity-0", "opacity-100");
-            preloaderRef.current.style.display = "none";
         }, 2500);
 
         return () => { clearTimeout(textTimeout); }
-    }, []);
-
-    useEffect(() => {
-        const removePreloader = setTimeout(() => {
-            preloaderRef.current.style.opacity = 0;
-        }, 1800);
-        
-        return () => { clearTimeout(removePreloader) };
     }, []);
 
     const handleScroll = () => {
@@ -46,9 +40,9 @@ const Projects = () => {
 
     return (
         <section>
-            <div className="preloader bg-[#060606] fixed top-0 left-0 w-full h-full z-[90] opacity-100 duration-500 block" ref={preloaderRef}>
-                <h1 className="text-white absolute right-10 top-4 text-2xl">CH 02: Projects</h1>
-            </div>
+            <Preloader 
+            txt={"CH 02: Projects"}
+            />
 
             <div className="h-[100vh]">
                 <div className="absolute top-80 left-1/2 -translate-x-1/2 -translate-y-1/2 overflow-hidden">

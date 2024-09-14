@@ -1,5 +1,8 @@
 import TechItem from "./TechItem"
 
+import gitIcon from "/icons/logo-git.svg";
+import webIcon from "/icons/web-icon.svg";
+
 const ProjectLeft = ( props ) => {
     return (
         <aside className="mt-5 flex flex-col gap-10">
@@ -32,9 +35,17 @@ const ProjectLeft = ( props ) => {
                 </ul>
             </div>
 
-            <article className="flex flex-col items-start">
-                <a href={props.gitUrl} target="_blank" className="int source-link text-lg">GitHub</a>
-                <a href={props.webUrl} target="_blank" className="int source-link text-lg">Website</a>
+            <article className="flex flex-col items-start gap-2">
+                <a href={props.gitUrl} target="_blank" className="int source-link text-lg flex items-center gap-2">
+                    GitHub
+
+                    <img src={gitIcon} alt="" className="w-6" />
+                </a>
+                <a href={props.webUrl} target="_blank" className="int source-link text-lg flex items-center gap-2">
+                    Website
+
+                    <img src={webIcon} alt="" className="w-6 fill-white" />    
+                </a>
             </article>
         </aside>   
     )
