@@ -3,28 +3,16 @@ import { useEffect, useRef } from "react";
 import ProjectLeft from "./ProjectLeft";
 import ProjectRight from "./ProjectRight";
 
+import Preloader from "../../../Preloader";
+
 const Project = ( props ) => {
-    const projectPreloader = useRef(null);
-
-    useEffect(() => {
-        const removePreloader = setTimeout(() => {
-            projectPreloader.current.style.opacity = 0;
-
-            setTimeout(() => {
-                projectPreloader.current.style.display = "none";
-            }, 450);
-        }, 1800);
-
-        return () => clearTimeout(removePreloader);
-    }, []);
+    document.title = props.project;
 
     return (
-        <section className="project-page flex gap-8 justify-center items-start px-4 text-[#dddddd] h-[100vh] overflow-hidden">
-            <div ref={projectPreloader} 
-                className="preloader bg-[#060606] fixed top-0 left-0 w-full h-full z-[90] opacity-100 duration-500 block"
-            >
-                <h1 className="text-[#dddddd] absolute right-10 top-4 text-2xl pointer-events-none">{props.project}</h1>
-            </div>
+        <section className="project-page flex gap-8 justify-center items-start px-4 text-[#dddddd] w-full h-[100vh] overflow-hidden">
+            <Preloader 
+            txt={props.project}
+            />
 
             <ProjectLeft 
             video={props.video}
