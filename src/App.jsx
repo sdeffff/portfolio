@@ -10,6 +10,8 @@ const SquareUp = lazy(() => import("./pages/Projects/Project's Pages/SquareUp"))
 const MiniProjects = lazy(() => import("./pages/Projects/Project's Pages/MiniProjects"));
 
 function App() {
+  //asd
+
   const cursorRef = useRef(null),
         projectName = useRef(null);
 
