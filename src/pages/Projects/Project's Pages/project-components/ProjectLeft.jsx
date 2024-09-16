@@ -14,8 +14,8 @@ const ProjectLeft = ( props ) => {
     }, []);
     
     return (
-        <aside className="w-[250%] flex flex-col items-center gap-4 mt-5 pb-10 overflow-y-scroll h-[100vh]">
-            <div className="previews flex flex-col gap-2">
+        <aside className="flex flex-col items-center justify-center lg:justify-normal w-full lg:w-[32rem] xl:w-[53.5rem] gap-4 mt-5 pb-10 lg:h-[100vh] lg:overflow-y-scroll">
+            <div className="previews flex flex-col items-center justify-center gap-2">
                 <video src={props.video} ref={reviewRef} type="video/mp4" loop muted></video>
 
                 <img src={props.img2} />
@@ -27,7 +27,7 @@ const ProjectLeft = ( props ) => {
                 <article className="project-features flex flex-col">
                     <h2 className="project-features-head text-xl">Project Features</h2>
     
-                    <ul className="features-reviews flex gap-4">
+                    <ul className="features-reviews flex flex-col xl:flex-row gap-4">
                         <li className="int" name="adaptiveness">
                             <img src={props.adapt} />
                         </li>

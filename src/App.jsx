@@ -1,6 +1,6 @@
 import { lazy, Suspense, useEffect, useRef } from "react";
 
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, Link } from "react-router-dom";
 
 import "./app.css";
 //Pages:
@@ -54,14 +54,16 @@ function App() {
     }
 
     const onMouseMove = (e) => {
-      const interactable = e.target.closest(".int"),
-            interacting = interactable !== null;
+      if(window.innerWidth > 1024) {  
+        const interactable = e.target.closest(".int"),
+              interacting = interactable !== null;
 
-      const project = e.target.closest(".proj");
+        const project = e.target.closest(".proj");
 
-      //Interacting - expanding of tracker
-      //project - element that has proj in className
-      handleCursor(e, interacting, project);
+        //Interacting - expanding of tracker
+        //project - element that has proj in className
+        handleCursor(e, interacting, project);
+      }
     }
 
     window.addEventListener("mousemove", onMouseMove);
@@ -73,6 +75,10 @@ function App() {
 
   return (
     <>
+    <Link to={"/portfolio/"}>
+      <h2 className="font-extralight fixed">M</h2>
+    </Link>
+
     <div id="noise"></div>
 
     <Suspense fallback="loading...">
@@ -84,7 +90,7 @@ function App() {
       </Routes>
     </Suspense>
 
-      <div className="cursor-inner" ref={cursorRef}>
+      <div className="cursor-inner hidden lg:block" ref={cursorRef}>
 
         <p className="project-name" ref={projectName}></p>
       </div>

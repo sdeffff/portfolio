@@ -11,6 +11,11 @@ const Preloader = ( {txt} ) => {
 
                     setTimeout(() => {
                         preloaderRef.current.className = preloaderRef.current.className.replace("block", "hidden");
+
+                        console.clear();
+
+                        const logStyles = "background-color: #101010; color: #f4f4f4; font-size: 1.25rem; padding: 2px; border-radius: 6px;";
+                        console.log("%cDesign and Code by Maksym Pavlii", logStyles);
                     }, 450);
                 }, 1800);
             }

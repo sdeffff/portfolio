@@ -9,7 +9,7 @@ const Project = ( props ) => {
     document.title = props.project;
 
     return (
-        <section className="project-page flex gap-8 justify-center items-start px-4 text-[#dddddd] w-full h-[100vh] overflow-hidden">
+        <section className="project-page flex flex-col-reverse lg:flex-row gap-8 justify-center items-start px-4 text-[#dddddd] w-full lg:h-[100vh] overflow-hidden">
             <Preloader 
             txt={props.project}
             />

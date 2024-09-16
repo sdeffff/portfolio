@@ -52,12 +52,18 @@
     pointer-events: none;
 }
 
-
 .features-reviews li {
-    width: 17rem;
+    width: 21rem;
+    height: 19.5rem;
     overflow: hidden;
 
     position: relative;
+}
+
+@media screen and (min-width: 1024px) {
+    .features-reviews li {
+        width: 17rem;
+    }
 }
 
 .features-reviews li::after {
