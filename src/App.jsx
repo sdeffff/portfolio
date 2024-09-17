@@ -6,6 +6,8 @@ import "./app.css";
 //Pages:
 const Hero = lazy(() => import("./pages/Hero/Hero"));
 const ProjectsPage = lazy(() => import("./pages/Projects/ProjectsPage"));
+const About = lazy(() => import("./pages/About/About"));
+
 const SquareUp = lazy(() => import("./pages/Projects/Project's Pages/SquareUp"));
 const MiniProjects = lazy(() => import("./pages/Projects/Project's Pages/MiniProjects"));
 
@@ -81,6 +83,7 @@ function App() {
         <Route path="/portfolio/projects" element={<ProjectsPage />}></Route>
         <Route path="/portfolio/projects/square-up" element={<SquareUp />}></Route>
         <Route path="/portfolio/projects/mini-projects" element={<MiniProjects />}></Route>
+        <Route path="/portfolio/about-me" element={<About />}></Route>
       </Routes>
     </Suspense>
 
