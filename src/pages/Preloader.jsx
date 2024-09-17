@@ -12,7 +12,7 @@ const Preloader = ( {txt} ) => {
                     setTimeout(() => {
                         preloaderRef.current.className = preloaderRef.current.className.replace("block", "hidden");
                     }, 450);
-                }, 1800);
+                }, 1350);
             }
         };
 
