@@ -36,12 +36,12 @@ const ProjectLeft = ( props ) => {
             </div>
 
             <article className="flex flex-col items-start gap-2">
-                <a href={props.gitUrl} target="_blank" className="int source-link text-lg md:text-xl flex items-center gap-2">
+                <a href={props.gitUrl} target="_blank" className="int source-link text-lg flex items-center gap-2 text-[#F3DBC7]">
                     GitHub
 
                     <img src={gitIcon} alt="" className="w-6" />
                 </a>
-                <a href={props.webUrl} target="_blank" className="int source-link text-lg md:text-xl flex items-center gap-2">
+                <a href={props.webUrl} target="_blank" className="int source-link text-lg flex items-center gap-2 text-[#F3DBC7]">
                     Website
 
                     <img src={webIcon} alt="" className="w-6 fill-white" />    

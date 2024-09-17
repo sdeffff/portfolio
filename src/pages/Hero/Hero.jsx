@@ -35,9 +35,9 @@ const Hero = () => {
                         my projects
                     </Link>
 
-                    <a href="#" className="link int">
+                    <Link to={"about-me"} className="link int">
                         about me
-                    </a>
+                    </Link>
                 </div>
             </article>
 
