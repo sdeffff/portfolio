@@ -29,9 +29,9 @@ const Projects = () => {
 
     useEffect(() => {
         const textTimeout = setTimeout(() => {
-            textRef.current.className = textRef.current.className.replace("translate-y-24", "translate-y-0");
-            circleRef.current.className = circleRef.current.className.replace("opacity-0", "opacity-100");
-        }, 2500);
+            textRef.current.style.transform = "translateY(0)"
+            circleRef.current.style.opacity = 1;
+        }, 2050);
 
         return () => { clearTimeout(textTimeout); }
     }, []);

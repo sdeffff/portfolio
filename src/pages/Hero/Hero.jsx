@@ -1,9 +1,11 @@
-import { lazy, Suspense, useEffect, useRef } from "react";
+import { lazy, Suspense, } from "react";
 import { Link } from "react-router-dom";
 
 const Vinyl = lazy(() => import("./hero-components/Vinyl"));
 
 import Preloader from "../Preloader";
+
+import gitLogo from "/icons/logo-git.svg";
 
 import "./hero.css";
 
@@ -30,14 +32,20 @@ const Hero = () => {
                     </span>
                 </h2>
 
-                <div className="flex flex-col items-center gap-1 md:flex-row md:gap-5 md:justify-center">
-                    <Link to={"projects"} className="link int">
-                        my projects
-                    </Link>
+                <div className="flex flex-col items-center gap-2">
+                    <div className="flex flex-col items-center gap-1 md:flex-row md:gap-5 md:justify-center">
+                        <Link to={"projects"} className="link int">
+                            my projects
+                        </Link>
 
-                    <Link to={"about-me"} className="link int">
-                        about me
-                    </Link>
+                        <Link to={"about-me"} className="link int">
+                            about me
+                        </Link>
+                    </div>
+
+                    <a href="https://github.com/sdeffff" target="_blank">
+                        <img className="int w-9 md:w-10" src={gitLogo} />
+                    </a>
                 </div>
             </article>
 
@@ -50,14 +58,5 @@ const Hero = () => {
 
 export default Hero;
 
-//adjust light on 3d model, try to do it ok
-
-
-//For portfolio:
-//locomotive scroll
-//cursor tracker
-//text reveal animation
-//transitions between pages
-//зжать картинки + lazy loading
 //npm knip
 //use mapbox

@@ -64,7 +64,7 @@ a {
   pointer-events: none;
 }
 
-#preloader h1, #preloader h3 {
+.preloader h1, .preloader h3 {
   font-family: 'VCR OSD Mono';
 }
 

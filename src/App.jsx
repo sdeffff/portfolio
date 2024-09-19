@@ -15,17 +15,24 @@ function App() {
   //asd
 
   const cursorRef = useRef(null),
-        projectName = useRef(null);
+        projectName = useRef(null),
+        logoRef = useRef(null);
+
+  useEffect(() => {
+    logoRef.current.style.opacity = 1;
+  }, []);
+
+  //Function to make first word of project uppercased
+  const firstToUpper = (str) => {
+    str = str.split("");
+    
+    str.splice(0, 1, str[0].toUpperCase());
+
+    return str.join("");
+  }
 
   //using useEffect because if we won't use useEffect, it will send us errors
   //because our divs will be called before they will be created in the DOM
-  const firstToUpper = (str) => {
-    return str
-      .split("")
-      .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-      .join("");
-  }
-
   useEffect(() => {
     const handleCursor = (e, interacting, project) => {
       const x = e.clientX,
@@ -34,7 +41,7 @@ function App() {
       const expand = { transform: `translate(${x}px, ${y}px) scale(${interacting ? 6 : 1})`, }
 
       //animating the tracker
-      cursorRef.current.animate(expand, {duration: 300});
+      cursorRef.current.animate(expand, {duration: 210});
 
       //and adding styles to it
       cursorRef.current.style.transform = `translate(${x}px, ${y}px) scale(${interacting ? 6 : 1})`;
@@ -80,7 +87,7 @@ function App() {
   return (
     <>
     <Link to={"/portfolio/"}>
-      <h2 className="font-extralight fixed">M</h2>
+      <h2 ref={logoRef} className="logoImg int font-extralight fixed top-4 right-5 lg:right-0 lg:left-5 z-[10] text-2xl duration-[400ms] delay-[2000ms] opacity-0">M</h2>
     </Link>
 
     <div id="noise"></div>

@@ -7,10 +7,10 @@ const Preloader = ( {txt} ) => {
         const handlePreloader = () => {
             if(preloaderRef.current) {
                 setTimeout(() => {
-                    preloaderRef.current.className = preloaderRef.current.className.replace("opacity-100", "opacity-0");
+                    preloaderRef.current.style.opacity = 0;
 
                     setTimeout(() => {
-                        preloaderRef.current.className = preloaderRef.current.className.replace("block", "hidden");
+                        preloaderRef.current.style.display = "none";
 
                         console.clear();
 

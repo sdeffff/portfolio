@@ -39,7 +39,7 @@ const Vinyl = () => {
             
             //Handling 3d model
             loader.load(
-                "/portfolio/3d/untitled.glb",
+                "/portfolio/3d/vinyl.glb",
                 (gltf) => {
                     const model = gltf.scene;
                     model.anisotropy = 16;
@@ -54,7 +54,11 @@ const Vinyl = () => {
     
                     scene.add(model);
                     model.position.set(0, 0, 0);
-                    model.scale.set(1, 1, 1);
+                    if(window.innerWidth <= 768) {
+                        model.scale.set(0.7, 0.7, 0.7);
+                    } else {    
+                        model.scale.set(1, 1, 1);
+                    }
                     model.rotation.x = 0.22;
     
                     const animate = () => {
