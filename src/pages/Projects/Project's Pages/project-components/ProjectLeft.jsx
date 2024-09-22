@@ -18,9 +18,9 @@ const ProjectLeft = ( props ) => {
             <div className="previews flex flex-col items-center justify-center gap-2">
                 <video src={props.video} ref={reviewRef} type="video/mp4" loop muted></video>
 
-                <img src={props.img2} />
-                <img src={props.img1} />
-                <img src={props.img3} />
+                <img loading="lazy" src={props.img2} />
+                <img loading="lazy" src={props.img1} />
+                <img loading="lazy" src={props.img3} />
             </div>
 
             {props.features ? ( 
@@ -29,7 +29,7 @@ const ProjectLeft = ( props ) => {
     
                     <ul className="features-reviews flex flex-col xl:flex-row gap-4">
                         <li className="int" name="adaptiveness">
-                            <img src={props.adapt} />
+                            <img loading="lazy" src={props.adapt} />
                         </li>
                         <li className="int" name="transition">
                             <video ref={videoRef} muted onMouseOver={() => videoRef.current.play()}>
@@ -37,7 +37,7 @@ const ProjectLeft = ( props ) => {
                             </video>
                         </li>
                         <li className="int" name="cursor">
-                            <img src={props.cursor} />
+                            <img loading="lazy" src={props.cursor} />
                         </li>
                     </ul>
                 </article>

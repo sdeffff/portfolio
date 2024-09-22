@@ -37,45 +37,43 @@ const Vinyl = () => {
 
             loader.setDRACOLoader(draco);
             
+            if(window.innerWidth >= 768) {
             //Handling 3d model
-            loader.load(
-                "/portfolio/3d/vinyl.glb",
-                (gltf) => {
-                    const model = gltf.scene;
-                    model.anisotropy = 16;
-                    modelRef.current = model;
-    
-                    model.traverse((child) => {
-                        if (child.isMesh) {
-                            child.material.transparent = true;
-                            child.material.opacity = 1;
-                        }
-                    });
-    
-                    scene.add(model);
-                    model.position.set(0, 0, 0);
-                    if(window.innerWidth <= 768) {
-                        model.scale.set(0.7, 0.7, 0.7);
-                    } else {    
+                loader.load(
+                    "/portfolio/3d/vinyl.glb",
+                    (gltf) => {
+                        const model = gltf.scene;
+                        model.anisotropy = 16;
+                        modelRef.current = model;
+        
+                        model.traverse((child) => {
+                            if (child.isMesh) {
+                                child.material.transparent = true;
+                                child.material.opacity = 1;
+                            }
+                        });
+        
+                        scene.add(model);
+                        model.position.set(0, 0, 0);
                         model.scale.set(1, 1, 1);
+                        model.rotation.x = 0.22;
+        
+                        const animate = () => {
+                            requestAnimationFrame(animate);
+        
+                            model.rotation.y += 0.0065;
+        
+                            renderer.render(scene, camera);
+                        };
+        
+                        animate();
+                    },
+                    undefined,
+                    (error) => {
+                        console.error("An error occurred loading the model: ", error);
                     }
-                    model.rotation.x = 0.22;
-    
-                    const animate = () => {
-                        requestAnimationFrame(animate);
-    
-                        model.rotation.y += 0.0065;
-    
-                        renderer.render(scene, camera);
-                    };
-    
-                    animate();
-                },
-                undefined,
-                (error) => {
-                    console.error("An error occurred loading the model: ", error);
-                }
-            );
+                );
+            }
     
             camera.position.set(-0.003, 4, 1.53);
             camera.lookAt(0, 0, 0);
