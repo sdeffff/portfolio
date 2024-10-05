@@ -1,6 +1,7 @@
+import { memo } from "react";
 import { Link } from "react-router-dom";
 
-const ProjectItem = ({ img, path }) => {
+const ProjectItem = memo(({ img, path }) => {
     return (
         <li className="int proj overflow-hidden">
             <Link to={path}>
@@ -8,6 +9,6 @@ const ProjectItem = ({ img, path }) => {
             </Link>
         </li>
     )
-}
+});
 
 export default ProjectItem;

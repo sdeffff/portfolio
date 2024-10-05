@@ -14,12 +14,7 @@ const MiniProjects = lazy(() => import("./pages/Projects/Project's Pages/MiniPro
 function App() {
   //asd
   const cursorRef = useRef(null),
-        projectName = useRef(null),
-        logoRef = useRef(null);
-
-  useEffect(() => {
-    logoRef.current.style.opacity = 1;
-  }, []);
+        projectName = useRef(null);
 
   //Function to make first word of project uppercased
   const firstToUpper = useCallback((str) => {
@@ -86,7 +81,7 @@ function App() {
   return (
     <>
     <Link to={"/portfolio/"}>
-      <h2 ref={logoRef} className="logoImg int font-extralight fixed top-4 right-5 lg:right-0 lg:left-5 z-[10] text-2xl duration-[400ms] delay-[2000ms] opacity-0">M</h2>
+      <h2 className="int font-extralight w-5 fixed top-4 right-5 lg:right-0 lg:left-5 z-[10] text-2xl">M</h2>
     </Link>
 
     <div id="noise"></div>
@@ -110,26 +105,3 @@ function App() {
 }
 
 export default App;
-
-
-//1. Creating new branch
-//git checkout -b branch_name
-//git repo push
-
-//2. Merging
-//git checkout main
-//git fetch lab/o
-
-//git pull lab/o main
-
-//git checkout new_branch
-//git pull lab/o new_branch
-
-//git checkout main
-//git merge new_branch
-
-//3. Pushing merged changes to repo: git push lab/o
-
-//4. Deleteing branches:
-//local: git branch -d new_branch
-//git push lab/o --delete new_branch
