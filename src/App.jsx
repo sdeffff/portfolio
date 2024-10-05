@@ -1,4 +1,4 @@
-import { lazy, Suspense, useEffect, useRef } from "react";
+import { lazy, Suspense, useCallback, useEffect, useRef } from "react";
 
 import { Route, Routes, Link } from "react-router-dom";
 
@@ -13,7 +13,6 @@ const MiniProjects = lazy(() => import("./pages/Projects/Project's Pages/MiniPro
 
 function App() {
   //asd
-
   const cursorRef = useRef(null),
         projectName = useRef(null),
         logoRef = useRef(null);
@@ -23,13 +22,13 @@ function App() {
   }, []);
 
   //Function to make first word of project uppercased
-  const firstToUpper = (str) => {
+  const firstToUpper = useCallback((str) => {
     str = str.split("");
-    
-    str.splice(0, 1, str[0].toUpperCase());
+
+    str[0] = str[0].toUpperCase();
 
     return str.join("");
-  }
+  }, []);
 
   //using useEffect because if we won't use useEffect, it will send us errors
   //because our divs will be called before they will be created in the DOM

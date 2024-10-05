@@ -1,3 +1,4 @@
+import { memo } from "react";
 import Project from "./project-components/Project";
 
 //review part:
@@ -19,7 +20,7 @@ import cssIcon from "/icons/css.png";
 
 import "../projects.css"
 
-const SquareUp = () => {
+const SquareUp = memo(() => {
     return (
         <Project 
         project = "Square Up"
@@ -48,6 +49,6 @@ const SquareUp = () => {
         webUrl={"https://sdeffff.github.io/Square/"}
         />
     )
-}
+});
 
 export default SquareUp;

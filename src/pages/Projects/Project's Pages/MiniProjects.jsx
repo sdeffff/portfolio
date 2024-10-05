@@ -1,3 +1,4 @@
+import { memo } from "react";
 import Project from "./project-components/Project";
 
 //review part:
@@ -13,7 +14,7 @@ import jsIcon from "/icons/js.png";
 
 import "../projects.css"
 
-const MiniProjects = () => {
+const MiniProjects = memo(() => {
     return (
         <Project 
         project = "Mini Projects"
@@ -35,7 +36,7 @@ const MiniProjects = () => {
         webUrl={"https://sdeffff.github.io/mini/"}
         />
     )
-}
+});
 
 export default MiniProjects;
 

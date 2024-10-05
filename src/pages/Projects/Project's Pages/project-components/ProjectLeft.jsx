@@ -1,8 +1,9 @@
-import { useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 
 const ProjectLeft = ( props ) => {
     const reviewRef = useRef(null),
-          videoRef = useRef(null);
+          videoRef = useRef(null),
+          [isHovered, setIsHovered] = useState(false);
 
     useEffect(() => {
         const playVideo = setTimeout(() => {
@@ -12,11 +13,20 @@ const ProjectLeft = ( props ) => {
 
         return () => clearTimeout(playVideo);
     }, []);
+
+    const handleVideo = () => {
+        if(videoRef.current && !isHovered) {
+            setIsHovered(true);
+            if(videoRef.current.paused) {
+                videoRef.current.play();
+            }
+        }
+    }
     
     return (
         <aside className="flex flex-col items-center justify-center lg:justify-normal w-full lg:w-[32rem] xl:w-[53.5rem] gap-4 mt-5 pb-10 lg:h-[100vh] lg:overflow-y-scroll">
             <div className="previews flex flex-col items-center justify-center gap-2">
-                <video src={props.video} ref={reviewRef} type="video/mp4" loop muted></video>
+                <video src={props.video} ref={reviewRef} type="video/mp4" loop muted playsinline></video>
 
                 <img loading="lazy" src={props.img2} />
                 <img loading="lazy" src={props.img1} />
@@ -32,7 +42,7 @@ const ProjectLeft = ( props ) => {
                             <img loading="lazy" src={props.adapt} />
                         </li>
                         <li className="int" name="transition">
-                            <video ref={videoRef} muted onMouseOver={() => videoRef.current.play()}>
+                            <video ref={videoRef} muted onMouseOver={handleVideo} onMouseOut={() => setIsHovered(false)} playsinline>
                                 <source src={props.transition} type="video/mp4" />
                             </video>
                         </li>
