@@ -1,6 +1,6 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, memo } from "react";
 
-const ProjectLeft = ( props ) => {
+const ProjectLeft = memo(( props ) => {
     const reviewRef = useRef(null),
           videoRef = useRef(null),
           [isHovered, setIsHovered] = useState(false);
@@ -56,6 +56,6 @@ const ProjectLeft = ( props ) => {
             }
         </aside>
     )
-}
+});
 
 export default ProjectLeft;

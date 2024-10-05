@@ -1,9 +1,10 @@
+import { memo } from "react";
 import TechItem from "./TechItem"
 
 import gitIcon from "/icons/logo-git.svg";
 import webIcon from "/icons/web-icon.svg";
 
-const ProjectLeft = ( props ) => {
+const ProjectLeft = memo(( props ) => {
     return (
         <aside className="mt-5 flex flex-col gap-10 w-[32rem]">
             <article className="flex flex-col items-start gap-3">
@@ -49,6 +50,6 @@ const ProjectLeft = ( props ) => {
             </article>
         </aside>   
     )
-}
+});
 
 export default ProjectLeft;

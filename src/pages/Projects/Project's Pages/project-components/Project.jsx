@@ -1,11 +1,11 @@
-import { useEffect, useRef } from "react";
+import { memo } from "react";
 
 import ProjectLeft from "./ProjectLeft";
 import ProjectRight from "./ProjectRight";
 
 import Preloader from "../../../Preloader";
 
-const Project = ( props ) => {
+const Project = memo(( props ) => {
     document.title = props.project;
 
     return (
@@ -41,6 +41,6 @@ const Project = ( props ) => {
             />
         </section>
     )
-}
+});
 
 export default Project;

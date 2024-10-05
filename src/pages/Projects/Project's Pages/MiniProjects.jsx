@@ -39,23 +39,3 @@ const MiniProjects = memo(() => {
 });
 
 export default MiniProjects;
-
-{/* <Project 
-project = "Mini Projects"
-video={video}
-features={false}
-desc={`In this project I wanted to show my abilities to work only with HTML, CSS and JS.
-    You can see some default projects there like 'Random Quote', 'Weather App' or 'Random Colors'
-    and so on... `}
-previewImg1={miniImg2}
-previewImg2={miniImg1}
-previewImg3={miniImg3}
-tech1Name={"HTML - Semantic HTML."}
-tech1Img={htmlIcon}
-tech2Name={"CSS - Some default styles"}
-tech2Img={cssIcon}
-tech3Name={"JavaScript - Main logic"}
-tech3Img={jsIcon}
-gitUrl={"https://github.com/sdeffff/mini"}
-webUrl={"https://sdeffff.github.io/mini/"}
-/> */}
