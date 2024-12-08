@@ -10,12 +10,12 @@ const About = lazy(() => import("./pages/About/About"));
 
 const SquareUp = lazy(() => import("./pages/Projects/Project's Pages/SquareUp"));
 const MiniProjects = lazy(() => import("./pages/Projects/Project's Pages/MiniProjects"));
+const Chat = lazy(() => import("./pages/Projects/Project's Pages/Chat"));
 
 function App() {
   //asd
   const cursorRef = useRef(null),
-        projectName = useRef(null);
-
+        projectNameRef = useRef(null);
   //Function to make first word of project uppercased
   const firstToUpper = useCallback((str) => {
     str = str.split("");
@@ -31,7 +31,7 @@ function App() {
     const handleCursor = (e, interacting, project) => {
       const x = e.clientX,
             y = e.clientY;
-
+      
       const expand = { transform: `translate(${x}px, ${y}px) scale(${interacting ? 6 : 1})`, }
 
       //animating the tracker
@@ -40,7 +40,7 @@ function App() {
       //and adding styles to it
       cursorRef.current.style.transform = `translate(${x}px, ${y}px) scale(${interacting ? 6 : 1})`;
 
-      projectName.current.style.opacity = 0;
+      projectNameRef.current.style.opacity = 0;
       //logic to reveal project name near cursor tracker
       if(project !== null) {
         //getting src of the image and removing all symbols
@@ -53,8 +53,8 @@ function App() {
         name = name.join(" ");
 
         //passing the value to our <p> tag
-        projectName.current.innerHTML = name;
-        projectName.current.style.opacity = 1;
+        projectNameRef.current.innerHTML = name;
+        projectNameRef.current.style.opacity = 1;
       }
     }
 
@@ -92,13 +92,14 @@ function App() {
         <Route path="/portfolio/projects" element={<ProjectsPage />}></Route>
         <Route path="/portfolio/projects/square-up" element={<SquareUp />}></Route>
         <Route path="/portfolio/projects/mini-projects" element={<MiniProjects />}></Route>
+        <Route path="/portfolio/projects/supachat" element={<Chat />}></Route>
         <Route path="/portfolio/about-me" element={<About />}></Route>
       </Routes>
     </Suspense>
 
       <div className="cursor-inner hidden lg:block" ref={cursorRef}>
 
-        <p className="project-name" ref={projectName}></p>
+        <p className="project-name" ref={projectNameRef}></p>
       </div>
     </>
   )
