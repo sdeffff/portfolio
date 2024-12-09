@@ -3,14 +3,14 @@ import Project from "./project-components/Project";
 
 //review part:
 import video from "/videos/square-up-review.mp4"
-import squareImg1 from "/imgs/square-up.webp";
+import squareImg1 from "/imgs/project-previews/square-up.webp";
 import squareImg2 from "/imgs/square-previews/square-up-preview-img-1.webp";
 import squareImg3 from "/imgs/square-previews/square-up-preview-img-2.webp";
 
 //features part:
-import adaptImg from "/imgs/adaptiveness.webp";
-import cursorImg from "/imgs/cursor-animations.webp";
-import transitionReview from "/imgs/transition.mp4";
+import adaptImg from "/imgs/square-previews/features/adaptiveness.webp";
+import cursorImg from "/imgs/square-previews/features/cursor-animations.webp";
+import transitionReview from "/imgs/square-previews/features/transition.mp4";
 
 //icons:
 import reactIcon from "/icons/react.png";
