@@ -29,9 +29,13 @@ const SquareUp = memo(() => {
         previewImg2={squareImg2}
         previewImg3={squareImg3}
         features={true}
-        adapt={adaptImg}
-        cursor={cursorImg}
-        transition={transitionReview}
+        feature1Img={adaptImg}
+        feature2Img={transitionReview}
+        feature2IsVideo={true}
+        feature3Img={cursorImg}
+        feature1Name={"adaptiveness"}
+        feature2Name={"transition"}
+        feature3Name={"cursor"}
         desc={`This is my first big pet-project, where I used React + TypeScript.
                 In my opinion this project really helped me to understand a lot of aspects
                 in web developing, and some basics knowledges about web app's optimization.

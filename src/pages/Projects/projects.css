@@ -103,6 +103,18 @@
     content: "Cursor Effects";
 }
 
+.features-reviews li[name="emoji"]::after {
+    content: "Emojis 😀";
+}
+
+.features-reviews li[name="chatting"]::after {
+    content: "Real-time chatting";
+}
+
+.features-reviews li[name="auth"]::after {
+    content: "User auth";
+}
+
 .features-reviews li * {
     transition: .3s ease;
 
@@ -123,4 +135,8 @@
     left: 50%;
 
     transform: translate(-50%, -50%) scale(2.5);
+}
+
+.features-reviews li:last-child img {
+    height: inherit;
 }

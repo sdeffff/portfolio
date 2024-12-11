@@ -7,6 +7,11 @@ import chatImg1 from "/imgs/chat-previews/chat-preview-img-1.png";
 import chatImg2 from "/imgs/chat-previews/chat-preview-img-2.png";
 import chatImg3 from "/imgs/chat-previews/chat-preview-img-3.png";
 
+//features part:
+import emoji from "/imgs/chat-previews/features/chat-emoji-feature.png";
+import realTime from "/imgs/chat-previews/features/real-time-feature.png";
+import auth from "/imgs/chat-previews/features/chat-auth-feature.webp";
+
 //icons:
 import angular from "/icons/angular.svg";
 import firebase from "/icons/firebase.svg";
@@ -19,7 +24,14 @@ const Chat = memo(() => {
     return (
         <Project 
         project = "SupaChat"
-        features={false}
+        features={true}
+        feature1Img={emoji}
+        feature2Img={realTime}
+        feature2IsVideo={false}
+        feature3Img={auth}
+        feature1Name={"emoji"}
+        feature2Name={"chatting"}
+        feature3Name={"auth"}
         video={video}
         desc={`SupaChat - is a realtime chat app built with Angular and Firebase, 
             in this project I tried to use everything that I didn't know well and practice it, f.e.

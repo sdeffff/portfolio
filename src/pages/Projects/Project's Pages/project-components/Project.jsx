@@ -20,9 +20,13 @@ const Project = memo(( props ) => {
             img2={props.previewImg2}
             img3={props.previewImg3}
             features={props.features}
-            adapt={props.adapt}
-            cursor={props.cursor}
-            transition={props.transition}
+            feature1Img={props.feature1Img}
+            feature2Img={props.feature2Img}
+            feature2IsVideo={props.feature2IsVideo}
+            feature3Img={props.feature3Img}
+            feature1Name={props.feature1Name}
+            feature2Name={props.feature2Name}
+            feature3Name={props.feature3Name}
             />
 
             <ProjectRight 

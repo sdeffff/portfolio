@@ -38,16 +38,20 @@ const ProjectLeft = memo(( props ) => {
                     <h2 className="project-features-head text-xl">Project Features</h2>
     
                     <ul className="features-reviews flex flex-col xl:flex-row gap-4">
-                        <li className="int" name="adaptiveness">
-                            <img loading="lazy" src={props.adapt} />
+                        <li className="int" name={props.feature1Name}>
+                            <img loading="lazy" src={props.feature1Img} />
                         </li>
-                        <li className="int" name="transition">
-                            <video ref={videoRef} muted onMouseOver={handleVideo} onMouseOut={() => setIsHovered(false)} playsinline>
-                                <source src={props.transition} type="video/mp4" />
-                            </video>
+                        <li className="int" name={props.feature2Name}>
+                            {props.feature2IsVideo ? 
+                                <video ref={videoRef} muted onMouseOver={handleVideo} onMouseOut={() => setIsHovered(false)} playsinline>
+                                    <source src={props.feature2Img} type="video/mp4" />
+                                </video> : 
+
+                                <img loading="lazy" src={props.feature2Img} />
+                            }
                         </li>
-                        <li className="int" name="cursor">
-                            <img loading="lazy" src={props.cursor} />
+                        <li className="int" name={props.feature3Name}>
+                            <img loading="lazy" src={props.feature3Img} />
                         </li>
                     </ul>
                 </article>
