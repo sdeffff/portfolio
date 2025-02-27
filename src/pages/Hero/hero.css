@@ -14,25 +14,40 @@
     position: relative;
 }
 
-.link::after {
+.link::after,
+.link::before {
     content: "";
     position: absolute;
 
     bottom: 0;
     left: 0;
 
-    width: 0;
+    width: 100%;
+
+    transform: scaleX(0);
+
+    transform-origin: left;
+
+    transition: transform 1.4s cubic-bezier(.19, 1, .22, 1);
+}
+
+.link::after {
+    height: 1.75px;
+    background-color: #fff;
+}
+
+.link::before {
     height: 2px;
+    background-color: #e4c3a7;
 
-    background-color: #F3DBC7;
-
-    transition: .35s ease;
-
-    transform-origin: right;
-
-    mix-blend-mode: difference;
+    z-index: 10;
 }
 
 .link:hover::after {
-    width: 100%;
+    transform: scaleX(1);
+}
+
+.link:hover::before {
+    transition-delay: .25s;
+    transform: scaleX(1);   
 }

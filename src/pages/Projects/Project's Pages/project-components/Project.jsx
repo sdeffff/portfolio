@@ -5,44 +5,20 @@ import ProjectRight from "./ProjectRight";
 
 import Preloader from "../../../Preloader";
 
-const Project = memo(( props ) => {
-    document.title = props.project;
+//Wrapper for another projects
+const Project = memo(( { project, desc, media, features, techStack, links } ) => {
+    document.title = project;
 
     return (
         <section className="project-page flex flex-col-reverse lg:flex-row gap-8 justify-center items-start px-4 text-[#dddddd] w-full lg:h-[100vh] overflow-hidden">
             <Preloader 
-            txt={props.project}
+            txt={project}
             />
 
-            <ProjectLeft 
-            video={props.video}
-            img1={props.previewImg1}
-            img2={props.previewImg2}
-            img3={props.previewImg3}
-            features={props.features}
-            feature1Img={props.feature1Img}
-            feature2Img={props.feature2Img}
-            feature2IsVideo={props.feature2IsVideo}
-            feature3Img={props.feature3Img}
-            feature1Name={props.feature1Name}
-            feature2Name={props.feature2Name}
-            feature3Name={props.feature3Name}
-            />
+            {/* Passing objects to component and using spread operator passing it like props */}
+            <ProjectLeft {...media} {...features} />
 
-            <ProjectRight 
-            projectName={props.project}
-            desc={props.desc}
-            tech1Name={props.tech1Name}
-            tech1Img={props.tech1Img}
-            tech2Name={props.tech2Name}
-            tech2Img={props.tech2Img}
-            tech3Name={props.tech3Name}
-            tech3Img={props.tech3Img}
-            tech4Name={props.tech4Name}
-            tech4Img={props.tech4Img}
-            gitUrl={props.gitUrl}
-            webUrl={props.webUrl}
-            />
+            <ProjectRight projectName={project} desc={desc} {...techStack} {...links} />
         </section>
     )
 });

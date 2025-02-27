@@ -28,24 +28,31 @@ function App() {
   //using useEffect because if we won't use useEffect, it will send us errors
   //because our divs will be called before they will be created in the DOM
   useEffect(() => {
+    /**
+     * @e - event (in theat case - moving cursor)
+     * @interacting - defines if the hovered element in html has 'int' in className
+     * @project - defines the same as the interacting but with 'proj' in className
+     */
     const handleCursor = (e, interacting, project) => {
       const x = e.clientX,
             y = e.clientY;
       
-      const expand = { transform: `translate(${x}px, ${y}px) scale(${interacting ? 6 : 1})`, }
+      const expand = { transform: `translate(${x}px, ${y}px) scale(${interacting ? 5 : 1})`, }
 
       //animating the tracker
       cursorRef.current.animate(expand, {duration: 210});
 
       //and adding styles to it
-      cursorRef.current.style.transform = `translate(${x}px, ${y}px) scale(${interacting ? 6 : 1})`;
+      cursorRef.current.style.transform = `translate(${x}px, ${y}px) scale(${interacting ? 5 : 1})`;
 
       projectNameRef.current.style.opacity = 0;
+      
       //logic to reveal project name near cursor tracker
       if(project !== null) {
-        //getting src of the image and removing all symbols
+        //getting src of the image and removing all symbols and getting name of the project at the end
         let name = project.children[0].children[0].src.split('/').pop().split('.')[0].split('-');
 
+        //Setting every first word to have first letter upper cased
         for(let i = 0; i < name.length; i++) {
           name[i] = firstToUpper(name[i]);
         }

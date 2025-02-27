@@ -21,36 +21,53 @@ import cssIcon from "/icons/css.png";
 import "../projects.css"
 
 const SquareUp = memo(() => {
+    //Passing props in objects and then passing them to <Project /> wrapper
+    const media = {
+        video,
+        previewImg1: squareImg1,
+        previewImg2: squareImg2,
+        previewImg3: squareImg3,
+    };
+
+    const features = {
+        features: true,
+        feature2IsVideo: true,
+        feature1Img: adaptImg,
+        feature2Img: transitionReview,
+        feature3Img: cursorImg,
+        feature1Name: "adaptiveness",
+        feature2Name: "transition",
+        feature3Name: "cursor",
+    };
+
+    const techStack = {
+        tech1Name: "React - (useState, useEffect, useRef)",
+        tech2Name: "TypeScript - (handling props, and types)",
+        tech3Name: "Tailwind - to make job with styles easier",
+        tech4Name: "CSS - if i have some troubles with TW :)",
+        tech1Img: reactIcon,
+        tech2Img: typescriptIcon,
+        tech3Img: tailwindIcon,
+        tech4Img: cssIcon,
+    };
+
+    const links = {
+        gitUrl: "https://github.com/sdeffff/Square",
+        webUrl: "https://sdeffff.github.io/Square/",
+    };
+
     return (
         <Project 
         project = "Square Up"
-        video={video}
-        previewImg1={squareImg1}
-        previewImg2={squareImg2}
-        previewImg3={squareImg3}
-        features={true}
-        feature1Img={adaptImg}
-        feature2Img={transitionReview}
-        feature2IsVideo={true}
-        feature3Img={cursorImg}
-        feature1Name={"adaptiveness"}
-        feature2Name={"transition"}
-        feature3Name={"cursor"}
+        media={media}
+        features={features}
         desc={`This is my first big pet-project, where I used React + TypeScript.
                 In my opinion this project really helped me to understand a lot of aspects
                 in web developing, and some basics knowledges about web app's optimization.
                 I also had really good practice here, f.e: react router dom, react hooks, lazy+suspense
                 and practiced tailwind in conjunction with react.`}
-        tech1Name={"React - (useState, useEffect, useRef)"}
-        tech1Img={reactIcon}
-        tech2Name={"TypeScript - (handling props, and types)"}
-        tech2Img={typescriptIcon}
-        tech3Name={"Tailwind - to make job with styles easier"}
-        tech3Img={tailwindIcon}
-        tech4Name={"CSS - if i have some troubles with TW :)"}
-        tech4Img={cssIcon}
-        gitUrl={"https://github.com/sdeffff/Square"}
-        webUrl={"https://sdeffff.github.io/Square/"}
+        techStack={techStack}
+        links={links}
         />
     )
 });

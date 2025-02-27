@@ -4,7 +4,7 @@ import TechItem from "./TechItem"
 import gitIcon from "/icons/logo-git.svg";
 import webIcon from "/icons/web-icon.svg";
 
-const ProjectLeft = memo(( props ) => {
+const ProjectRight = memo(( props ) => {
     return (
         <aside className="mt-5 flex flex-col gap-10 w-[32rem]">
             <article className="flex flex-col items-start gap-3">
@@ -36,13 +36,14 @@ const ProjectLeft = memo(( props ) => {
                 </ul>
             </div>
 
-            <article className="flex flex-col items-start gap-2">
-                <a href={props.gitUrl} target="_blank" className="int source-link text-lg flex items-center gap-2 text-[#F3DBC7]">
+            <article className="flex items-start gap-[.25px]">
+                <a href={props.gitUrl} target="_blank" className="int source-link py-[.25rem] px-[.5rem] rounded-tl-lg rounded-bl-lg bg-transparent border border-[#fff] text-lg flex items-center gap-2 text-[#fff] duration-200 hover:bg-[#ffffffca] hover:text-[#000]">
                     GitHub
 
                     <img src={gitIcon} alt="" className="w-6" />
                 </a>
-                <a href={props.webUrl} target="_blank" className="int source-link text-lg flex items-center gap-2 text-[#F3DBC7]">
+
+                <a href={props.webUrl} target="_blank" className="int source-link py-[.25rem] px-[.5rem] rounded-tr-lg rounded-br-lg bg-transparent border border-[#fff] text-lg flex items-center gap-2 text-[#fff] duration-200 hover:bg-[#ffffffca] hover:text-[#000]">
                     Website
 
                     <img src={webIcon} alt="" className="w-6 fill-white" />    
@@ -52,4 +53,4 @@ const ProjectLeft = memo(( props ) => {
     )
 });
 
-export default ProjectLeft;
+export default ProjectRight;

@@ -15,25 +15,39 @@ import jsIcon from "/icons/js.png";
 import "../projects.css"
 
 const MiniProjects = memo(() => {
+    const media = {
+        video: video,
+        previewImg1: miniImg1,
+        previewImg2: miniImg2,
+        previewImg3: miniImg3,
+    }
+
+    const techStack = {
+        tech1Name: "HTML - Semantic HTML.",
+        tech2Name: "CSS - Some default styles",
+        tech3Name: "JavaScript - Main logic",
+        tech1Img: htmlIcon,
+        tech2Img: cssIcon,
+        tech3Img: jsIcon,
+    }
+
+    const features = {features: false}
+
+    const links = {
+        gitUrl: "https://github.com/sdeffff/mini",
+        webUrl: "https://sdeffff.github.io/mini/",
+    }
+
     return (
         <Project 
         project = "Mini Projects"
-        video={video}
-        features={false}
+        features={features}
         desc={`In this project, I wanted to show my skills and creativity by working exclusively with HTML, CSS, and JavaScript. 
             My goal is to demonstrate my front-end development capabilities. There are 9 mini-projects in this collection, each designed to highlight various skills such as working with APIs, handling events, manipulating the DOM, 
             and crafting responsive layouts using CSS.`}
-        previewImg1={miniImg2}
-        previewImg2={miniImg1}
-        previewImg3={miniImg3}
-        tech1Name={"HTML - Semantic HTML."}
-        tech1Img={htmlIcon}
-        tech2Name={"CSS - Some default styles"}
-        tech2Img={cssIcon}
-        tech3Name={"JavaScript - Main logic"}
-        tech3Img={jsIcon}
-        gitUrl={"https://github.com/sdeffff/mini"}
-        webUrl={"https://sdeffff.github.io/mini/"}
+        media={media}
+        techStack={techStack}
+        links={links}
         />
     )
 });
