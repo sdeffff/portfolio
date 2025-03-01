@@ -1,1 +1,0 @@
-.main-txt h2 span,.main-txt h2 span a{color:#ecf0f1;font-weight:300}.link{font-size:1.85rem;font-weight:200;color:#f3dbc7;position:relative}.link:after{content:"";position:absolute;bottom:0;left:0;width:0;height:2px;background-color:#f3dbc7;transition:.35s ease;transform-origin:right;mix-blend-mode:difference}.link:hover:after{width:100%}
